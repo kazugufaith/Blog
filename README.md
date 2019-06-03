@@ -1,11 +1,11 @@
-<!-- # Blog App
+# Blog App
 
 #### This is a web application for those who can express themselves through written words. The application provides a platform for individuals to write and post their blogs/stories, view other blog posts and comment. Delete their own posts and comments when they wish to. 
 
 #### By **Faith Kazungu**
 
 ## Description
-Deployed on:https://we-blog3.herokuapp.com/
+
 This is a blog web application. Bloggers can express their thoughts and share their feelings on respective topics. Users are authenticated by signing up for the application to share blogs but can freely view all blog posts by other users without an account. Users can remove unwanted posts and comments from their account. Users are allowed to edit their profile whenever they need it.
 
 ## Setup/Installation Requirements
@@ -59,4 +59,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*
 Copyright (c) 2019 **Faith Kazungu**
 
- -->
+
