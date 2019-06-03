@@ -5,7 +5,7 @@
 #### By **Faith Kazungu**
 
 ## Description
-
+Deployed on:
 This is a blog web application. Bloggers can express their thoughts and share their feelings on respective topics. Users are authenticated by signing up for the application to share blogs but can freely view all blog posts by other users without an account. Users can remove unwanted posts and comments from their account. Users are allowed to edit their profile whenever they need it.
 
 ## Setup/Installation Requirements
