@@ -27,13 +27,13 @@ def get_quote():
 
 def process_quote(quote):
   '''
-  # Function that proces the quote source to an object
-  # '''
-  # id = quote.get('id')
-  # author = quote.get('author')
-  # quote = quote.get('quote')
+  Function that proces the quote source to an object
+  '''
+  id = quote.get('id')
+  author = quote.get('author')
+  quote = quote.get('quote')
 
-  # quote_object = Quote(id,author,quote)
+  quote_object = Quote(id,author,quote)
 
-  # return quote_object
+  return quote_object
 
