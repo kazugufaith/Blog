@@ -1,4 +1,4 @@
-{% comment %} {% extends 'base.html' %}
+{% extends 'base.html' %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
 
@@ -26,7 +26,7 @@
           <p class="card-footer"><b>..{{user.username}}</b>'s blog</p>
         </div>
         
-        <a href="{{url_for('main.delete_comment',blog_id = post.id, comment_id = post.comment.id)}}"><button type="button" name="button" class="btn btn-warning">Delete Comment</button></a>
+        {% comment %} <a href="{{url_for('main.delete_comment',blog_id = post.id, comment_id = post.comment.id)}}"><button type="button" name="button" class="btn btn-warning">Delete Comment</button></a>
 
         {% endfor %}
       </div>
