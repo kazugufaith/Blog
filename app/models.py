@@ -60,24 +60,24 @@ class User(UserMixin,db.Model):
   def __repr__(self):
     return f'User {self.username}'
 
-# class Comment(db.Model):
-#   '''
-#   Comments data
-#   '''
-#   __tablename__ = 'comments'
+class Comment(db.Model):
+  '''
+  Comments data
+  '''
+  __tablename__ = 'comments'
 
-#   id = db.Column(db.Integer,primary_key=True)
-#   comment = db.Column(db.String(255))
-#   topic = db.Column(db.Integer,db.ForeignKey('blogs.id'))
-#   blogger = db.Column(db.Integer,db.ForeignKey('users.id'))
+  id = db.Column(db.Integer,primary_key=True)
+  comment = db.Column(db.String(255))
+  topic = db.Column(db.Integer,db.ForeignKey('blogs.id'))
+  blogger = db.Column(db.Integer,db.ForeignKey('users.id'))
 
-#   def comment_save(self):
-#     db.session.add(self)
-#     db.session.commit()
+  def comment_save(self):
+    db.session.add(self)
+    db.session.commit()
 
-#   def delete_comment(self):
-#     db.session.delete(self)
-#     db.session.commit()
+  def delete_comment(self):
+    db.session.delete(self)
+    db.session.commit()
 
-#   def __repr__(self):
-#     return f'{self.comment}'
+  def __repr__(self):
+    return f'{self.comment}'
