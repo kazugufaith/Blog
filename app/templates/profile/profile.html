@@ -8,7 +8,7 @@
 {% endblock %}
 
 
-{% comment %} {% block content %}
+{% block content %}
 <div class="container">
     <div class="row form-edit">
     <!-- displaying  Username-->
@@ -18,7 +18,7 @@
           <a href="{{url_for('main.update_profile',uname=user.username)}}">Edit profile</a>
         {% endif %}
     
-        <!--Displaying user bio-->
+        {% comment %} <!--Displaying user bio-->
         {% if user.bio %}
           <p> {{user.bio}}</p>
         {%else%}
