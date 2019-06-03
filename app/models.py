@@ -17,22 +17,22 @@ class Quote:
     self.author = author
     self.quote = quote
 
-# class Blog(db.Model):
-#   '''
-#   Class that defines blog objects
-#   '''
-#   __tablename__ = 'blogs'
+class Blog(db.Model):
+  '''
+  Class that defines blog objects
+  '''
+  __tablename__ = 'blogs'
 
-#   id = db.Column(db.Integer,primary_key=True)
-#   title = db.Column(db.String(255))
-#   blog = db.Column(db.String(255))
-#   writer = db.Column(db.String(255))
-#   category = db.Column(db.String(255))
-#   added_date = db.Column(db.DateTime,default=datetime.utcnow)
-#   blogger = db.Column(db.Integer,db.ForeignKey('users.id'))  
+  id = db.Column(db.Integer,primary_key=True)
+  title = db.Column(db.String(255))
+  blog = db.Column(db.String(255))
+  writer = db.Column(db.String(255))
+  category = db.Column(db.String(255))
+  added_date = db.Column(db.DateTime,default=datetime.utcnow)
+  blogger = db.Column(db.Integer,db.ForeignKey('users.id'))  
 
-#   def __repr__(self):
-#     return f'Blog{self.blog}'
+  def __repr__(self):
+    return f'Blog{self.blog}'
 
 # class User(UserMixin,db.Model):
 #   '''
