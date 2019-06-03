@@ -19,26 +19,26 @@ def index():
   return render_template('index.html',quote=random_quote,lifestyle=lifestyle,fitness=fitness,trending=trending,tech=tech)
 
 
-# @main.route('/blog/new',methods = ['GET','POST'])
-# @login_required
-# def new_blog():
-#   form = BlogForm()
+@main.route('/blog/new',methods = ['GET','POST'])
+@login_required
+def new_blog():
+  form = BlogForm()
 
-#   if form.validate_on_submit():
-#     title=form.title.data
-#     category = form.category.data
-#     blog = form.blog_post.data
-#     writer= form.writer.data
-#     blogger = current_user
-#     new_blog = Blog(title=title,category=category,blog=blog,blogger=current_user._get_current_object().id)
+  if form.validate_on_submit():
+    title=form.title.data
+    category = form.category.data
+    blog = form.blog_post.data
+    writer= form.writer.data
+    blogger = current_user
+    new_blog = Blog(title=title,category=category,blog=blog,blogger=current_user._get_current_object().id)
 
-#     db.session.add(new_blog)
-#     db.session.commit()
+    db.session.add(new_blog)
+    db.session.commit()
 
-#     flash('Your Blog has been added...','success')
-#     return redirect(url_for('main.index',id=new_blog.id))
+    flash('Your Blog has been added...','success')
+    return redirect(url_for('main.index',id=new_blog.id))
 
-#   return render_template('new_blog.html',title='Add Your Blog',blog_form=form)
+  return render_template('new_blog.html',title='Add Your Blog',blog_form=form)
 
 # @main.route('/delete_blog/<int:id>',methods =['POST'])
 # @login_required
