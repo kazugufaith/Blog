@@ -1,22 +1,22 @@
-# from . import main
-# from flask import render_template,request,redirect,url_for,abort,flash
-# from ..request import get_quote
-# from ..models import Blog,User,Comment
-# from .forms import BlogForm,UpdateProfile,CommentForm
-# from .. import db,photos
-# from flask_login import login_required,current_user
+from . import main
+from flask import render_template,request,redirect,url_for,abort,flash
+from ..request import get_quote
+from ..models import Blog,User,Comment
+from .forms import BlogForm,UpdateProfile,CommentForm
+from .. import db,photos
+from flask_login import login_required,current_user
 
-# @main.route('/')
-# def index():
-#   random_quote = get_quote()  
+@main.route('/')
+def index():
+  random_quote = get_quote()  
 
-#   blogs = Blog.query.all()
-#   lifestyle = Blog.query.filter_by(category='Lifestyle').all()
-#   fitness = Blog.query.filter_by(category='Fitness').all()
-#   trending = Blog.query.filter_by(category='Trending').all()
-#   tech = Blog.query.filter_by(category='IT').all()
+  blogs = Blog.query.all()
+  lifestyle = Blog.query.filter_by(category='Lifestyle').all()
+  fitness = Blog.query.filter_by(category='Fitness').all()
+  trending = Blog.query.filter_by(category='Trending').all()
+  tech = Blog.query.filter_by(category='IT').all()
 
-#   return render_template('index.html',quote=random_quote,lifestyle=lifestyle,fitness=fitness,trending=trending,tech=tech)
+  return render_template('index.html',quote=random_quote,lifestyle=lifestyle,fitness=fitness,trending=trending,tech=tech)
 
 
 # @main.route('/blog/new',methods = ['GET','POST'])
