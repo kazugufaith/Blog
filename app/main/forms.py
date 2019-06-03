@@ -17,6 +17,6 @@ class CommentForm (FlaskForm):
   comment = StringField('Add your comment here',validators=[Required()])
   submit = SubmitField('Submit')
 
-# class DeleteForm(FlaskForm):
-#   submit = SubmitField('Submit')
+class DeleteForm(FlaskForm):
+  submit = SubmitField('Submit')
 
