@@ -18,7 +18,7 @@
           <a href="{{url_for('main.update_profile',uname=user.username)}}">Edit profile</a>
         {% endif %}
     
-        {% comment %} <!--Displaying user bio-->
+        <!--Displaying user bio-->
         {% if user.bio %}
           <p> {{user.bio}}</p>
         {%else%}
@@ -26,7 +26,7 @@
         {% endif %}
       </div>
     
-      <!--Display profile photo-->
+      {% comment %} <!--Display profile photo-->
       <div class="col-md-4">
     
         {% if user.profile_pic_path %}
