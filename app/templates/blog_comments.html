@@ -26,11 +26,11 @@
           <p class="card-footer"><b>..{{user.username}}</b>'s blog</p>
         </div>
         
-        {% comment %} <a href="{{url_for('main.delete_comment',blog_id = post.id, comment_id = post.comment.id)}}"><button type="button" name="button" class="btn btn-warning">Delete Comment</button></a>
+        <a href="{{url_for('main.delete_comment',blog_id = post.id, comment_id = post.comment.id)}}"><button type="button" name="button" class="btn btn-warning">Delete Comment</button></a>
 
         {% endfor %}
       </div>
   </div>  
 </div>
 {% include 'footer.html' %}
-{% endblock %} {% endcomment %}
+{% endblock %}
