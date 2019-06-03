@@ -30,11 +30,11 @@ def create_app(config_name):
   from .request import configure_request
   configure_request(app)
 
-  # #Initializing flask extensions
-  # bootstrap = Bootstrap(app)
-  # db.init_app(app)
-  # login_manager.init_app(app)
-  # mail.init_app(app)
+  #Initializing flask extensions
+  bootstrap = Bootstrap(app)
+  db.init_app(app)
+  login_manager.init_app(app)
+  mail.init_app(app)
 
   # #Configure UploadSet
   # configure_uploads(app,photos)
