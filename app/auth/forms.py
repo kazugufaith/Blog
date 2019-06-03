@@ -11,13 +11,13 @@ class RegistrationForm(FlaskForm):
   password_confirm = PasswordField('Confirm Passwords',validators = [Required()])
   submit = SubmitField('Sign Up')
 
-#   def validate_email(self,data_field):
-#     if User.query.filter_by(email =data_field.data).first():
-#       raise ValidationError('This email has already been used!')
+  def validate_email(self,data_field):
+    if User.query.filter_by(email =data_field.data).first():
+      raise ValidationError('This email has already been used!')
 
-#   def validate_username(self,data_field):
-#     if User.query.filter_by(username=data_field.data).first():
-#       raise ValidationError('That username is already taken.')
+  def validate_username(self,data_field):
+    if User.query.filter_by(username=data_field.data).first():
+      raise ValidationError('That username is already taken.')
 
 # class LoginForm(FlaskForm):
 #   email = StringField('Your Email Address', validators=[Required(),Email()])
