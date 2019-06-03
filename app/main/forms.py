@@ -9,9 +9,9 @@ class BlogForm(FlaskForm):
   writer = StringField('Your alias name')
   submit = SubmitField('Submit')
 
-# class UpdateProfile(FlaskForm):
-#   bio =TextAreaField('Short description about you.',validators=[Required()])
-#   submit = SubmitField('Submit')
+class UpdateProfile(FlaskForm):
+  bio =TextAreaField('Short description about you.',validators=[Required()])
+  submit = SubmitField('Submit')
 
 # class CommentForm (FlaskForm):
 #   comment = StringField('Add your comment here',validators=[Required()])
