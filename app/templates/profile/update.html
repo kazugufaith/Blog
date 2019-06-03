@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
 {% endblock %}
 
-{% comment %} {% block content %}
+{% block content %}
   <div class="container form-edit">
     {{wtf.quick_form(form)}}
   </div>
   {% include 'footer.html' %}
-{% endblock %} {% endcomment %}
+{% endblock %}
