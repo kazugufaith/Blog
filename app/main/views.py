@@ -117,40 +117,40 @@ def comment_review(id):
   
   return render_template('blog_comments.html',comment_form=comment,post=post,comments=comments,blog=blog,user=user)
 
-# @main.route('/delete_comment/<blog_id>/<comment_id>',methods=['POST'])
-# @login_required
-# def delete_comment(blog_id,comment_id): 
+@main.route('/delete_comment/<blog_id>/<comment_id>',methods=['POST'])
+@login_required
+def delete_comment(blog_id,comment_id): 
   
-#   # blog = Blog.query.filter_by(id = blog_id).first()
-#   # comments = Comment.query.filter_by(topic = blog.id).order_by(Comment.posted.desc())
-#   # comment = Comment.query.filter_by(id = comment_id).first()
-#   # if blog.user_id == current_user.id:
+  # blog = Blog.query.filter_by(id = blog_id).first()
+  # comments = Comment.query.filter_by(topic = blog.id).order_by(Comment.posted.desc())
+  # comment = Comment.query.filter_by(id = comment_id).first()
+  # if blog.user_id == current_user.id:
 
-#   #   Comment.delete_comment(comment)
+  #   Comment.delete_comment(comment)
 
-#   # return render_template('blog_comments.html', blog = blog, comments = comments)
-#   comment_form = CommentForm()
-#   blog=Blog.query.get(id)
-#   comment = Comment.query.filter_by(id = comment_id).first()
-#   comments = Comment.query.filter_by(topic=blog.id).all()
+  # return render_template('blog_comments.html', blog = blog, comments = comments)
+  comment_form = CommentForm()
+  blog=Blog.query.get(id)
+  comment = Comment.query.filter_by(id = comment_id).first()
+  comments = Comment.query.filter_by(topic=blog.id).all()
 
-#   if comment.validate_on_submit():
-#     content = comment.comment.data
+  if comment.validate_on_submit():
+    content = comment.comment.data
     
-#     new_post = Comment(comment=content,topic=blog.id)
+    new_post = Comment(comment=content,topic=blog.id)
 
-#     db.session.add(new_post)
-#     db.session.commit()  
+    db.session.add(new_post)
+    db.session.commit()  
 
-#   if blog.user_id == current_user.id:
+  if blog.user_id == current_user.id:
 
-#     Comment.delete_comment(comment)
-#     return redirect('main.comment_review')
+    Comment.delete_comment(comment)
+    return redirect('main.comment_review')
     
-#   post = 'Share Your Sentiments'
-#   user=User.query.get(id)
+  post = 'Share Your Sentiments'
+  user=User.query.get(id)
     
-#   if blog is None:
-#     abort(404)
+  if blog is None:
+    abort(404)
   
-#   return render_template('blog_comments.html',comment_form=comment_form,post=post,comments=comments,blog=blog,user=user)
+  return render_template('blog_comments.html',comment_form=comment_form,post=post,comments=comments,blog=blog,user=user)
