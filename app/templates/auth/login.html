@@ -1,4 +1,4 @@
-{% comment %} {% extends 'base.html' %}
+{% extends 'base.html' %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block styles %}
@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
 {% endblock %}
 
-{% block content %}
+{% comment %} {% block content %}
   <div class="container">
     <div class="row form-login">
       <div class="col-md-1"></div>
