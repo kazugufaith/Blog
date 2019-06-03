@@ -1,0 +1,29 @@
+{% comment %} {% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles %}
+  {{super()}}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row form-login">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <!--Flash message-->
+        {% for message in get_flashed_messages() %}
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{message}}
+        </div>
+        {% endfor %}
+        <!--Login form-->
+        {{wtf.quick_form(login_form)}}
+        <p> First time logging in?<a href="{{url_for('auth.register')}}">  Please Sign up first!</a> </p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+  {% include 'footer.html' %}
+{% endblock %} {% endcomment %}

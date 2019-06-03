@@ -1,0 +1,36 @@
+{% comment %} {% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block styles %}
+  {{super()}}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row comment-area">
+    <div class="col-md-4">
+        <div id="post-title">
+          <h2>{{post}}</h2>
+        </div>
+          {{ wtf.quick_form(comment_form) }}  
+      </div>
+      <div class="col-md-8" id="post-section">
+          <!-- {{format_comment|safe}} -->
+        {% for post in comments%}
+        
+        <div>
+          <h4 class="card-title">{{blog.title}}</h4>
+          <p class="card-body">" ...{{post.comment}} "</p>
+          <p class="card-footer"><b>..{{user.username}}</b>'s blog</p>
+        </div>
+        
+        <a href="{{url_for('main.delete_comment',blog_id = post.id, comment_id = post.comment.id)}}"><button type="button" name="button" class="btn btn-warning">Delete Comment</button></a>
+
+        {% endfor %}
+      </div>
+  </div>  
+</div>
+{% include 'footer.html' %}
+{% endblock %} {% endcomment %}

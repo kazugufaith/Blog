@@ -1,0 +1,99 @@
+{% comment %} {% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles %}
+  {{super()}}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+
+ {% endblock %}
+
+{% block content %}
+<div class="container-fluid" id="home-bg">
+ 
+    <div class="row view intro-2">
+      
+      <div class="text-center wow fadeInUp">
+        <h1 id="title">Welcome to myBLOG</h1>
+        <h4>It really is an amazing time, for those brave souls who take a chance and choose to speak up. </h4>
+        <br>
+        <div class="quote">
+          <h2>" {{quote.quote}} "</h2>
+          <p><footer><cite>{{quote.author}}</cite></footer></p>
+        </div>            
+      </div>
+            
+    </div>
+        
+    <div class="row" id="blogs">
+      <h2 class="text-center"> Blogs </h2>
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row blog-sec1">
+          <h3 class="categ"> LifeStyle </h3>
+          {% for blog in lifestyle %}
+          <div class="card blog-post">
+            <h4 class="card-title">Topic: {{blog.title}}</h4>
+            <p class="card-body"><img src="https://img.icons8.com/ios-glyphs/24/000000/quote-left.png" width="30"> {{blog.blog}} </p>
+            <footer><cite><p>Posted by <b>{{blog.author}}</b></p></cite></footer>
+            <p class="card-footer"><a href="/comments/{{blog.id}}"><button class="btn btn-light comment">Comments</button></a>
+              {% if blog.blogger == current_user %}
+
+              <form action="{{ url_for('main.delete_blog', id=blog.id) }}" method="POST">
+                  <input class="btn btn-danger" type="submit" value="Delete">
+              </form>
+              {% endif %}
+            </p>
+            
+          </div>
+          {% endfor %}
+        </div>       
+        
+        <div class="row blog-sec2">
+          <h3 class="categ"> Health & Fitness </h3>
+          {% for blog in fitness %}
+          <div class="card blog-post1">
+            <h4 class="card-title">Topic: {{blog.title}}</h4>
+            <p class="card-body"><img src="https://img.icons8.com/ios-glyphs/24/000000/quote-left.png" width="30"> {{blog.blog}} </p>
+            <footer><cite><p>Posted by <b>{{blog.author}}</b></p></cite></footer>
+            <p class="card-footer"><a href="/comments/{{blog.id}}"><button class="btn btn-light comment">Comments</button></a></p>
+            
+          </div>
+          {% endfor %}
+        </div>  
+
+        <div class="row blog-sec1">
+          <h3 class="categ"> Trends </h3>
+          {% for blog in trending %}
+          <div class="card blog-post">
+            <h4 class="card-title">Topic: {{blog.title}}</h4>
+            <p class="card-body"><img src="https://img.icons8.com/ios-glyphs/24/000000/quote-left.png" width="30"> {{blog.blog}} </p>
+            <footer><cite><p>Posted by <b>{{blog.author}}</b></p></cite></footer>
+            <p class="card-footer"><a href="/comments/{{blog.id}}"><button class="btn btn-light comment">Comments</button></a></p>
+            
+          </div>
+          {% endfor %}
+        </div> 
+        
+        <div class="row blog-sec2">
+          <h3 class="categ"> Technology </h3>
+          {% for blog in tech %}
+          <div class="card blog-post1">
+            <h4 class="card-title">Topic: {{blog.title}}</h4>
+            <p class="card-body"><img src="https://img.icons8.com/ios-glyphs/24/000000/quote-left.png" width="30"> {{blog.blog}} </p>
+            <footer><cite><p>Posted by <b>{{blog.author}}</b></p></cite></footer>
+            <p class="card-footer"><a href="/comments/{{blog.id}}"><button class="btn btn-light comment">Comments</button></a></p>
+           
+          </div>
+          {% endfor %}
+        </div>  
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    
+</div>
+
+{% include 'footer.html' %}
+{% endblock %}
+ {% endcomment %}
