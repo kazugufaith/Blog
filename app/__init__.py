@@ -24,11 +24,11 @@ def create_app(config_name):
   from .auth import auth as auth_blueprint
   app.register_blueprint(auth_blueprint,url_prefix ='/authenticate')
 
-  # #creating app configurations
-  # app.config.from_object(config_options[config_name])
+  #creating app configurations
+  app.config.from_object(config_options[config_name])
 
-  # from .request import configure_request
-  # configure_request(app)
+  from .request import configure_request
+  configure_request(app)
 
   # #Initializing flask extensions
   # bootstrap = Bootstrap(app)
