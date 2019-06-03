@@ -1,5 +1,10 @@
 *.sh
-inastance/
+instance/
 *.pyc
 virtual/
 /start.sh
+.env
+__pycache__/
+.vscode/
+.idea
+get-pip.py
