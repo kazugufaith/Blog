@@ -40,19 +40,19 @@ def new_blog():
 
   return render_template('new_blog.html',title='Add Your Blog',blog_form=form)
 
-# @main.route('/delete_blog/<int:id>',methods =['POST'])
-# @login_required
-# def delete_blog(id):
+@main.route('/delete_blog/<int:id>',methods =['POST'])
+@login_required
+def delete_blog(id):
   
-#   blog = Blog.query.get_or_404(id)
-#   if blog.blogger != current_user:
-#     abort(403)
-#   db.session.delete(blog)
-#   db.session.commit()
-#   flash('Your post has been deleted!', 'success')
-#   return redirect(url_for('main.index'))
+  blog = Blog.query.get_or_404(id)
+  if blog.blogger != current_user:
+    abort(403)
+  db.session.delete(blog)
+  db.session.commit()
+  flash('Your post has been deleted!', 'success')
+  return redirect(url_for('main.index'))
     
-#   return render_template('index.html')
+  return render_template('index.html')
 
 
 # @main.route('/user/<uname>')
